@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="MetaHub Academy Logo Design (3).png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - MetaHub Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">MetaHub</span>
+                <span class="logo-accent">Academy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#courses" class="nav-link">Courses</a></li>
+                <li><a href="store.html" class="nav-link active">Store</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="tools.html" class="nav-link">Tools</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Store Hero Section -->
+    <section class="store-hero">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="store-hero-content">
+                <h1 class="page-title">MetaHub Store</h1>
+                <p class="page-subtitle">Premium courses, digital assets, and learning materials to accelerate your tech journey</p>
+                <div class="store-search">
+                    <input type="text" placeholder="Search products..." class="search-input">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Categories -->
+    <section class="store-categories">
+        <div class="container">
+            <div class="categories-grid">
+                <div class="category-card active" data-category="all">
+                    <div class="category-icon">📚</div>
+                    <h3>All Products</h3>
+                </div>
+                <div class="category-card" data-category="courses">
+                    <div class="category-icon">🎓</div>
+                    <h3>Premium Courses</h3>
+                </div>
+                <div class="category-card" data-category="ebooks">
+                    <div class="category-icon">📖</div>
+                    <h3>E-Books</h3>
+                </div>
+                <div class="category-card" data-category="templates">
+                    <div class="category-icon">🎨</div>
+                    <h3>Templates</h3>
+                </div>
+                <div class="category-card" data-category="tools">
+                    <div class="category-icon">🛠️</div>
+                    <h3>Software Tools</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="sort-filter">
+                    <select class="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Premium Courses -->
+                <div class="product-card" data-category="courses">
+                    <div class="product-image">
+                        <div class="product-badge">Bestseller</div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Complete Web3 Mastery</h3>
+                        <p>Comprehensive course covering blockchain, smart contracts, and DeFi development</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(247 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$299</span>
+                            <span class="original-price">$499</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="courses">
+                    <div class="product-image">
+                        <div class="product-badge new">New</div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>AI Engineering Bootcamp</h3>
+                        <p>Build production-ready AI applications with modern frameworks and tools</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(89 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$399</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- E-Books -->
+                <div class="product-card" data-category="ebooks">
+                    <div class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>The Metaverse Developer's Guide</h3>
+                        <p>Complete handbook for building immersive virtual experiences</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(156 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$29</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ebooks">
+                    <div class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Blockchain Security Essentials</h3>
+                        <p>Best practices for securing smart contracts and DApps</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(203 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$39</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Templates -->
+                <div class="product-card" data-category="templates">
+                    <div class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>DeFi Dashboard Template</h3>
+                        <p>Professional React dashboard for DeFi applications</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(78 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$79</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="templates">
+                    <div class="product-image">
+                        <div class="product-badge">Popular</div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>NFT Marketplace Starter</h3>
+                        <p>Complete NFT marketplace template with smart contracts</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(134 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$149</span>
+                            <span class="original-price">$199</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Software Tools -->
+                <div class="product-card" data-category="tools">
+                    <div class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Smart Contract Analyzer</h3>
+                        <p>Advanced tool for auditing and optimizing smart contracts</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(92 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$199</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="tools">
+                    <div class="product-image">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>AI Model Training Suite</h3>
+                        <p>Professional toolkit for training and deploying AI models</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(67 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$299</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Get notified about new products, exclusive deals, and special offers</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input">
+                    <button class="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">MetaHub</span>
+                        <span class="logo-accent">Academy</span>
+                    </div>
+                    <p>Shaping the future of education through technology</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Store</h4>
+                        <ul>
+                            <li><a href="#">Premium Courses</a></li>
+                            <li><a href="#">E-Books</a></li>
+                            <li><a href="#">Templates</a></li>
+                            <li><a href="#">Software Tools</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Account</h4>
+                        <ul>
+                            <li><a href="#">My Orders</a></li>
+                            <li><a href="#">Wishlist</a></li>
+                            <li><a href="#">Downloads</a></li>
+                            <li><a href="#">Account Settings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MetaHub Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="store.js"></script>
+</body>
+</html>

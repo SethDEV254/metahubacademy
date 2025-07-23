@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="MetaHub Academy Logo Design (3).png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools - MetaHub Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">MetaHub</span>
+                <span class="logo-accent">Academy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#courses" class="nav-link">Courses</a></li>
+                <li><a href="store.html" class="nav-link">Store</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="tools.html" class="nav-link active">Tools</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tools Hero Section -->
+    <section class="tools-hero">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="tools-hero-content">
+                <h1 class="page-title">Developer Tools</h1>
+                <p class="page-subtitle">Professional development tools and utilities to boost your productivity and streamline your workflow</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Categories -->
+    <section class="tools-categories">
+        <div class="container">
+            <div class="tools-tabs">
+                <button class="tab-btn active" data-tab="blockchain">⛓️ Blockchain</button>
+                <button class="tab-btn" data-tab="ai">🤖 AI/ML</button>
+                <button class="tab-btn" data-tab="web">🌐 Web Dev</button>
+                <button class="tab-btn" data-tab="utilities">🛠️ Utilities</button>
+                <button class="tab-btn" data-tab="converters">🔄 Converters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blockchain Tools -->
+    <section class="tab-content active" id="blockchain">
+        <div class="container">
+            <h2 class="section-title">Blockchain Development Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card interactive">
+                    <div class="tool-header">
+                        <div class="tool-icon">🔐</div>
+                        <h3>Smart Contract Analyzer</h3>
+                    </div>
+                    <p>Analyze smart contracts for security vulnerabilities and gas optimization opportunities.</p>
+                    <div class="tool-interface">
+                        <textarea placeholder="Paste your Solidity code here..." class="code-input"></textarea>
+                        <button class="analyze-btn">Analyze Contract</button>
+                        <div class="analysis-results" style="display: none;">
+                            <div class="result-item">✅ No critical vulnerabilities found</div>
+                            <div class="result-item">⚠️ Gas optimization possible in line 23</div>
+                            <div class="result-item">ℹ️ Consider using SafeMath library</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card interactive">
+                    <div class="tool-header">
+                        <div class="tool-icon">💰</div>
+                        <h3>Gas Fee Calculator</h3>
+                    </div>
+                    <p>Calculate transaction costs across different blockchain networks.</p>
+                    <div class="tool-interface">
+                        <select class="network-select">
+                            <option value="ethereum">Ethereum Mainnet</option>
+                            <option value="polygon">Polygon</option>
+                            <option value="bsc">Binance Smart Chain</option>
+                            <option value="avalanche">Avalanche</option>
+                        </select>
+                        <input type="number" placeholder="Gas Limit" class="gas-input">
+                        <button class="calculate-btn">Calculate Fee</button>
+                        <div class="fee-result">
+                            <div class="fee-display">Estimated Fee: <span class="fee-amount">0.0045 ETH</span></div>
+                            <div class="fee-usd">≈ $12.34 USD</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🔍</div>
+                        <h3>Address Validator</h3>
+                    </div>
+                    <p>Validate cryptocurrency addresses across multiple blockchain networks.</p>
+                    <div class="tool-interface">
+                        <input type="text" placeholder="Enter wallet address..." class="address-input">
+                        <button class="validate-btn">Validate Address</button>
+                        <div class="validation-result">
+                            <div class="result-status">Status: <span class="status-text">Valid Ethereum Address</span></div>
+                            <div class="result-network">Network: <span class="network-text">Ethereum</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🎲</div>
+                        <h3>Private Key Generator</h3>
+                    </div>
+                    <p>Generate secure private keys and wallet addresses for development and testing.</p>
+                    <div class="tool-interface">
+                        <button class="generate-btn">Generate New Wallet</button>
+                        <div class="wallet-info">
+                            <div class="wallet-field">
+                                <label>Private Key:</label>
+                                <input type="text" readonly class="private-key-field">
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                            <div class="wallet-field">
+                                <label>Public Address:</label>
+                                <input type="text" readonly class="address-field">
+                                <button class="copy-btn">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI/ML Tools -->
+    <section class="tab-content" id="ai">
+        <div class="container">
+            <h2 class="section-title">AI & Machine Learning Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card interactive">
+                    <div class="tool-header">
+                        <div class="tool-icon">🧠</div>
+                        <h3>Model Performance Calculator</h3>
+                    </div>
+                    <p>Calculate accuracy, precision, recall, and F1-score for your ML models.</p>
+                    <div class="tool-interface">
+                        <div class="metrics-input">
+                            <input type="number" placeholder="True Positives" class="tp-input">
+                            <input type="number" placeholder="False Positives" class="fp-input">
+                            <input type="number" placeholder="True Negatives" class="tn-input">
+                            <input type="number" placeholder="False Negatives" class="fn-input">
+                        </div>
+                        <button class="calculate-metrics-btn">Calculate Metrics</button>
+                        <div class="metrics-results">
+                            <div class="metric">Accuracy: <span class="metric-value">0.85</span></div>
+                            <div class="metric">Precision: <span class="metric-value">0.82</span></div>
+                            <div class="metric">Recall: <span class="metric-value">0.88</span></div>
+                            <div class="metric">F1-Score: <span class="metric-value">0.85</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card interactive">
+                    <div class="tool-header">
+                        <div class="tool-icon">📊</div>
+                        <h3>Dataset Analyzer</h3>
+                    </div>
+                    <p>Upload and analyze your datasets for basic statistics and data quality insights.</p>
+                    <div class="tool-interface">
+                        <div class="file-upload">
+                            <input type="file" accept=".csv" class="file-input" style="display: none;">
+                            <button class="upload-btn">Upload CSV File</button>
+                        </div>
+                        <div class="dataset-stats">
+                            <div class="stat">Rows: <span class="stat-value">1,250</span></div>
+                            <div class="stat">Columns: <span class="stat-value">8</span></div>
+                            <div class="stat">Missing Values: <span class="stat-value">23</span></div>
+                            <div class="stat">Data Types: <span class="stat-value">5 numeric, 3 categorical</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🎯</div>
+                        <h3>Hyperparameter Optimizer</h3>
+                    </div>
+                    <p>Generate optimal hyperparameter combinations for common ML algorithms.</p>
+                    <div class="tool-interface">
+                        <select class="algorithm-select">
+                            <option value="random-forest">Random Forest</option>
+                            <option value="svm">Support Vector Machine</option>
+                            <option value="neural-network">Neural Network</option>
+                            <option value="gradient-boosting">Gradient Boosting</option>
+                        </select>
+                        <button class="optimize-btn">Generate Parameters</button>
+                        <div class="parameters-result">
+                            <div class="param">n_estimators: <span class="param-value">150</span></div>
+                            <div class="param">max_depth: <span class="param-value">12</span></div>
+                            <div class="param">min_samples_split: <span class="param-value">5</span></div>
+                            <div class="param">learning_rate: <span class="param-value">0.1</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🔮</div>
+                        <h3>Model Size Estimator</h3>
+                    </div>
+                    <p>Estimate memory requirements and inference time for different model architectures.</p>
+                    <div class="tool-interface">
+                        <input type="number" placeholder="Number of Parameters (millions)" class="params-input">
+                        <select class="precision-select">
+                            <option value="fp32">FP32 (32-bit)</option>
+                            <option value="fp16">FP16 (16-bit)</option>
+                            <option value="int8">INT8 (8-bit)</option>
+                        </select>
+                        <button class="estimate-btn">Estimate Size</button>
+                        <div class="size-result">
+                            <div class="size-metric">Model Size: <span class="size-value">240 MB</span></div>
+                            <div class="size-metric">Memory Usage: <span class="size-value">480 MB</span></div>
+                            <div class="size-metric">Est. Inference Time: <span class="size-value">15 ms</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Development Tools -->
+    <section class="tab-content" id="web">
+        <div class="container">
+            <h2 class="section-title">Web Development Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card interactive">
+                    <div class="tool-header">
+                        <div class="tool-icon">🎨</div>
+                        <h3>CSS Generator</h3>
+                    </div>
+                    <p>Generate CSS code for gradients, shadows, animations, and more.</p>
+                    <div class="tool-interface">
+                        <div class="css-controls">
+                            <select class="css-type">
+                                <option value="gradient">Linear Gradient</option>
+                                <option value="shadow">Box Shadow</option>
+                                <option value="border">Border Radius</option>
+                                <option value="animation">Animation</option>
+                            </select>
+                            <div class="gradient-controls">
+                                <input type="color" value="#ff6b35" class="color1">
+                                <input type="color" value="#00d4ff" class="color2">
+                                <input type="range" min="0" max="360" value="45" class="angle-slider">
+                            </div>
+                        </div>
+                        <div class="css-preview">
+                            <div class="preview-box"></div>
+                        </div>
+                        <textarea readonly class="css-output">background: linear-gradient(45deg, #ff6b35, #00d4ff);</textarea>
+                        <button class="copy-css-btn">Copy CSS</button>
+                    </div>
+                </div>
+
+                <div class="tool-card interactive">
+                    <div class="tool-header">
+                        <div class="tool-icon">📱</div>
+                        <h3>Responsive Breakpoint Tester</h3>
+                    </div>
+                    <p>Test your website's responsiveness across different screen sizes.</p>
+                    <div class="tool-interface">
+                        <input type="url" placeholder="Enter website URL..." class="url-input">
+                        <div class="device-buttons">
+                            <button class="device-btn active" data-width="375" data-height="667">iPhone</button>
+                            <button class="device-btn" data-width="768" data-height="1024">iPad</button>
+                            <button class="device-btn" data-width="1920" data-height="1080">Desktop</button>
+                        </div>
+                        <div class="viewport-display">
+                            <div class="viewport-info">Viewport: <span class="viewport-size">375 x 667</span></div>
+                            <div class="device-frame">
+                                <iframe src="about:blank" class="responsive-iframe"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">⚡</div>
+                        <h3>Performance Analyzer</h3>
+                    </div>
+                    <p>Analyze website performance metrics and get optimization suggestions.</p>
+                    <div class="tool-interface">
+                        <input type="url" placeholder="Enter website URL..." class="perf-url-input">
+                        <button class="analyze-perf-btn">Analyze Performance</button>
+                        <div class="performance-results">
+                            <div class="perf-metric">
+                                <span class="metric-name">Load Time:</span>
+                                <span class="metric-score good">2.3s</span>
+                            </div>
+                            <div class="perf-metric">
+                                <span class="metric-name">First Paint:</span>
+                                <span class="metric-score good">1.2s</span>
+                            </div>
+                            <div class="perf-metric">
+                                <span class="metric-name">Page Size:</span>
+                                <span class="metric-score warning">3.2MB</span>
+                            </div>
+                            <div class="perf-metric">
+                                <span class="metric-name">Requests:</span>
+                                <span class="metric-score good">24</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🔍</div>
+                        <h3>SEO Checker</h3>
+                    </div>
+                    <p>Analyze your website's SEO performance and get improvement recommendations.</p>
+                    <div class="tool-interface">
+                        <input type="url" placeholder="Enter website URL..." class="seo-url-input">
+                        <button class="check-seo-btn">Check SEO</button>
+                        <div class="seo-results">
+                            <div class="seo-item">
+                                <span class="seo-check">✅ Title Tag Present</span>
+                            </div>
+                            <div class="seo-item">
+                                <span class="seo-check">✅ Meta Description Found</span>
+                            </div>
+                            <div class="seo-item">
+                                <span class="seo-check">⚠️ Missing Alt Tags (3)</span>
+                            </div>
+                            <div class="seo-item">
+                                <span class="seo-check">✅ Mobile Friendly</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Utilities -->
+    <section class="tab-content" id="utilities">
+        <div class="container">
+            <h2 class="section-title">Development Utilities</h2>
+            <div class="tools-grid">
+                <div class="tool-card interactive">
+                    <div class="tool-header">
+                        <div class="tool-icon">🔐</div>
+                        <h3>Password Generator</h3>
+                    </div>
+                    <p>Generate secure passwords with customizable complexity options.</p>
+                    <div class="tool-interface">
+                        <div class="password-options">
+                            <label><input type="checkbox" checked> Uppercase Letters</label>
+                            <label><input type="checkbox" checked> Lowercase Letters</label>
+                            <label><input type="checkbox" checked> Numbers</label>
+                            <label><input type="checkbox" checked> Special Characters</label>
+                            <div class="length-control">
+                                <label>Length: <input type="range" min="8" max="64" value="16" class="length-slider"></label>
+                                <span class="length-display">16</span>
+                            </div>
+                        </div>
+                        <button class="generate-password-btn">Generate Password</button>
+                        <div class="password-result">
+                            <input type="text" readonly class="generated-password" value="Kx9#mP2$vL8@nQ4!">
+                            <button class="copy-password-btn">Copy</button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill strong"></div>
+                            </div>
+                            <span class="strength-text">Strong</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card interactive">
+                    <div class="tool-header">
+                        <div class="tool-icon">🎲</div>
+                        <h3>UUID Generator</h3>
+                    </div>
+                    <p>Generate unique identifiers for your applications and databases.</p>
+                    <div class="tool-interface">
+                        <div class="uuid-options">
+                            <label><input type="radio" name="uuid-version" value="v4" checked> UUID v4 (Random)</label>
+                            <label><input type="radio" name="uuid-version" value="v1"> UUID v1 (Timestamp)</label>
+                        </div>
+                        <button class="generate-uuid-btn">Generate UUID</button>
+                        <div class="uuid-result">
+                            <input type="text" readonly class="generated-uuid" value="f47ac10b-58cc-4372-a567-0e02b2c3d479">
+                            <button class="copy-uuid-btn">Copy</button>
+                        </div>
+                        <button class="generate-multiple-btn">Generate 10 UUIDs</button>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">📝</div>
+                        <h3>Lorem Ipsum Generator</h3>
+                    </div>
+                    <p>Generate placeholder text for your designs and mockups.</p>
+                    <div class="tool-interface">
+                        <div class="lorem-options">
+                            <select class="lorem-type">
+                                <option value="paragraphs">Paragraphs</option>
+                                <option value="sentences">Sentences</option>
+                                <option value="words">Words</option>
+                            </select>
+                            <input type="number" value="3" min="1" max="50" class="lorem-count">
+                        </div>
+                        <button class="generate-lorem-btn">Generate Text</button>
+                        <textarea readonly class="lorem-output">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</textarea>
+                        <button class="copy-lorem-btn">Copy Text</button>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🌈</div>
+                        <h3>Color Palette Generator</h3>
+                    </div>
+                    <p>Generate beautiful color palettes for your design projects.</p>
+                    <div class="tool-interface">
+                        <input type="color" value="#00d4ff" class="base-color">
+                        <select class="palette-type">
+                            <option value="complementary">Complementary</option>
+                            <option value="triadic">Triadic</option>
+                            <option value="analogous">Analogous</option>
+                            <option value="monochromatic">Monochromatic</option>
+                        </select>
+                        <button class="generate-palette-btn">Generate Palette</button>
+                        <div class="color-palette">
+                            <div class="color-swatch" style="background: #00d4ff">#00d4ff</div>
+                            <div class="color-swatch" style="background: #ff6b35">#ff6b35</div>
+                            <div class="color-swatch" style="background: #7c3aed">#7c3aed</div>
+                            <div class="color-swatch" style="background: #10b981">#10b981</div>
+                            <div class="color-swatch" style="background: #f59e0b">#f59e0b</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Converters -->
+    <section class="tab-content" id="converters">
+        <div class="container">
+            <h2 class="section-title">Data Converters</h2>
+            <div class="tools-grid">
+                <div class="tool-card interactive">
+                    <div class="tool-header">
+                        <div class="tool-icon">🔄</div>
+                        <h3>JSON Formatter</h3>
+                    </div>
+                    <p>Format, validate, and minify JSON data with syntax highlighting.</p>
+                    <div class="tool-interface">
+                        <div class="converter-controls">
+                            <button class="format-btn">Format</button>
+                            <button class="minify-btn">Minify</button>
+                            <button class="validate-btn">Validate</button>
+                        </div>
+                        <textarea placeholder="Paste your JSON here..." class="json-input">{"name":"MetaHub Academy","courses":["Web3","AI","Blockchain"]}</textarea>
+                        <textarea readonly class="json-output"></textarea>
+                        <div class="validation-status">Status: <span class="status">Valid JSON</span></div>
+                    </div>
+                </div>
+
+                <div class="tool-card interactive">
+                    <div class="tool-header">
+                        <div class="tool-icon">🔢</div>
+                        <h3>Base64 Encoder/Decoder</h3>
+                    </div>
+                    <p>Encode and decode Base64 strings for data transmission and storage.</p>
+                    <div class="tool-interface">
+                        <div class="base64-controls">
+                            <button class="encode-btn active">Encode</button>
+                            <button class="decode-btn">Decode</button>
+                        </div>
+                        <textarea placeholder="Enter text to encode..." class="base64-input"></textarea>
+                        <textarea readonly class="base64-output"></textarea>
+                        <button class="copy-base64-btn">Copy Result</button>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🔗</div>
+                        <h3>URL Encoder/Decoder</h3>
+                    </div>
+                    <p>Encode and decode URLs for safe transmission and processing.</p>
+                    <div class="tool-interface">
+                        <div class="url-controls">
+                            <button class="url-encode-btn active">Encode</button>
+                            <button class="url-decode-btn">Decode</button>
+                        </div>
+                        <input type="text" placeholder="Enter URL..." class="url-input">
+                        <input type="text" readonly class="url-output">
+                        <button class="copy-url-btn">Copy Result</button>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">⏰</div>
+                        <h3>Timestamp Converter</h3>
+                    </div>
+                    <p>Convert between Unix timestamps and human-readable dates.</p>
+                    <div class="tool-interface">
+                        <div class="timestamp-controls">
+                            <button class="to-timestamp-btn active">To Timestamp</button>
+                            <button class="from-timestamp-btn">From Timestamp</button>
+                        </div>
+                        <input type="datetime-local" class="datetime-input">
+                        <input type="number" placeholder="Unix timestamp" class="timestamp-input">
+                        <div class="timestamp-result">
+                            <div class="result-line">Unix Timestamp: <span class="timestamp-value">1704067200</span></div>
+                            <div class="result-line">Human Date: <span class="date-value">January 1, 2024 00:00:00 UTC</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">MetaHub</span>
+                        <span class="logo-accent">Academy</span>
+                    </div>
+                    <p>Shaping the future of education through technology</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Tools</h4>
+                        <ul>
+                            <li><a href="#">Blockchain Tools</a></li>
+                            <li><a href="#">AI/ML Tools</a></li>
+                            <li><a href="#">Web Dev Tools</a></li>
+                            <li><a href="#">Utilities</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Tool Documentation</a></li>
+                            <li><a href="#">API Access</a></li>
+                            <li><a href="#">Feature Requests</a></li>
+                            <li><a href="#">Bug Reports</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Developers</h4>
+                        <ul>
+                            <li><a href="#">API Documentation</a></li>
+                            <li><a href="#">SDK Downloads</a></li>
+                            <li><a href="#">Integration Guide</a></li>
+                            <li><a href="#">Code Examples</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MetaHub Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="tools.js"></script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="MetaHub Academy Logo Design (3).png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - MetaHub Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">MetaHub</span>
+                <span class="logo-accent">Academy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#courses" class="nav-link">Courses</a></li>
+                <li><a href="store.html" class="nav-link">Store</a></li>
+                <li><a href="resources.html" class="nav-link active">Resources</a></li>
+                <li><a href="tools.html" class="nav-link">Tools</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resources Hero Section -->
+    <section class="resources-hero">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="resources-hero-content">
+                <h1 class="page-title">Learning Resources</h1>
+                <p class="page-subtitle">Comprehensive guides, tutorials, and documentation to accelerate your learning journey</p>
+                <div class="resource-search">
+                    <input type="text" placeholder="Search resources..." class="search-input">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Categories -->
+    <section class="resource-categories">
+        <div class="container">
+            <div class="categories-tabs">
+                <button class="tab-btn active" data-tab="guides">📚 Guides</button>
+                <button class="tab-btn" data-tab="tutorials">🎥 Tutorials</button>
+                <button class="tab-btn" data-tab="documentation">📋 Documentation</button>
+                <button class="tab-btn" data-tab="cheatsheets">📄 Cheat Sheets</button>
+                <button class="tab-btn" data-tab="community">👥 Community</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guides Section -->
+    <section class="tab-content active" id="guides">
+        <div class="container">
+            <h2 class="section-title">Learning Guides</h2>
+            <div class="resources-grid">
+                <div class="resource-card featured">
+                    <div class="resource-header">
+                        <div class="resource-icon">🚀</div>
+                        <div class="resource-badge">Featured</div>
+                    </div>
+                    <h3>Complete Web3 Developer Roadmap</h3>
+                    <p>Step-by-step guide to becoming a professional Web3 developer, from basics to advanced concepts.</p>
+                    <div class="resource-meta">
+                        <span class="difficulty">Beginner to Advanced</span>
+                        <span class="duration">6-8 weeks</span>
+                    </div>
+                    <div class="resource-actions">
+                        <button class="resource-btn primary">Start Reading</button>
+                        <button class="resource-btn secondary">Download PDF</button>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">🤖</div>
+                    </div>
+                    <h3>AI/ML Implementation Guide</h3>
+                    <p>Practical guide for implementing machine learning solutions in real-world applications.</p>
+                    <div class="resource-meta">
+                        <span class="difficulty">Intermediate</span>
+                        <span class="duration">4-5 weeks</span>
+                    </div>
+                    <div class="resource-actions">
+                        <button class="resource-btn primary">Start Reading</button>
+                        <button class="resource-btn secondary">Download PDF</button>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">🔗</div>
+                    </div>
+                    <h3>Blockchain Security Best Practices</h3>
+                    <p>Essential security practices for building secure blockchain applications and smart contracts.</p>
+                    <div class="resource-meta">
+                        <span class="difficulty">Advanced</span>
+                        <span class="duration">3-4 weeks</span>
+                    </div>
+                    <div class="resource-actions">
+                        <button class="resource-btn primary">Start Reading</button>
+                        <button class="resource-btn secondary">Download PDF</button>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">🌐</div>
+                    </div>
+                    <h3>Metaverse Development Fundamentals</h3>
+                    <p>Learn the core concepts and technologies behind building immersive metaverse experiences.</p>
+                    <div class="resource-meta">
+                        <span class="difficulty">Beginner</span>
+                        <span class="duration">2-3 weeks</span>
+                    </div>
+                    <div class="resource-actions">
+                        <button class="resource-btn primary">Start Reading</button>
+                        <button class="resource-btn secondary">Download PDF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section class="tab-content" id="tutorials">
+        <div class="container">
+            <h2 class="section-title">Video Tutorials</h2>
+            <div class="tutorials-grid">
+                <div class="tutorial-card">
+                    <div class="tutorial-video">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <div class="video-duration">45:30</div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Building Your First DApp</h3>
+                        <p>Complete walkthrough of creating a decentralized application from scratch.</p>
+                        <div class="tutorial-stats">
+                            <span class="views">12.5K views</span>
+                            <span class="rating">★★★★★ 4.8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-card">
+                    <div class="tutorial-video">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <div class="video-duration">32:15</div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Smart Contract Security Audit</h3>
+                        <p>Learn how to identify and fix common security vulnerabilities in smart contracts.</p>
+                        <div class="tutorial-stats">
+                            <span class="views">8.3K views</span>
+                            <span class="rating">★★★★☆ 4.6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-card">
+                    <div class="tutorial-video">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <div class="video-duration">28:45</div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>AI Model Deployment</h3>
+                        <p>Step-by-step guide to deploying machine learning models to production.</p>
+                        <div class="tutorial-stats">
+                            <span class="views">15.7K views</span>
+                            <span class="rating">★★★★★ 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-card">
+                    <div class="tutorial-video">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <div class="video-duration">52:20</div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>VR Environment Creation</h3>
+                        <p>Create immersive virtual reality environments using modern development tools.</p>
+                        <div class="tutorial-stats">
+                            <span class="views">6.9K views</span>
+                            <span class="rating">★★★★☆ 4.7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="tab-content" id="documentation">
+        <div class="container">
+            <h2 class="section-title">Technical Documentation</h2>
+            <div class="docs-grid">
+                <div class="doc-category">
+                    <h3>API References</h3>
+                    <ul class="doc-list">
+                        <li><a href="#">Web3.js API Documentation</a></li>
+                        <li><a href="#">Ethereum JSON-RPC API</a></li>
+                        <li><a href="#">IPFS API Reference</a></li>
+                        <li><a href="#">MetaMask API Guide</a></li>
+                    </ul>
+                </div>
+                <div class="doc-category">
+                    <h3>Framework Guides</h3>
+                    <ul class="doc-list">
+                        <li><a href="#">Hardhat Development Environment</a></li>
+                        <li><a href="#">Truffle Suite Documentation</a></li>
+                        <li><a href="#">OpenZeppelin Contracts</a></li>
+                        <li><a href="#">Remix IDE Guide</a></li>
+                    </ul>
+                </div>
+                <div class="doc-category">
+                    <h3>Blockchain Networks</h3>
+                    <ul class="doc-list">
+                        <li><a href="#">Ethereum Mainnet Guide</a></li>
+                        <li><a href="#">Polygon Network Setup</a></li>
+                        <li><a href="#">Binance Smart Chain</a></li>
+                        <li><a href="#">Avalanche C-Chain</a></li>
+                    </ul>
+                </div>
+                <div class="doc-category">
+                    <h3>AI/ML Libraries</h3>
+                    <ul class="doc-list">
+                        <li><a href="#">TensorFlow Documentation</a></li>
+                        <li><a href="#">PyTorch Tutorials</a></li>
+                        <li><a href="#">Scikit-learn User Guide</a></li>
+                        <li><a href="#">Hugging Face Transformers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cheat Sheets Section -->
+    <section class="tab-content" id="cheatsheets">
+        <div class="container">
+            <h2 class="section-title">Quick Reference Cheat Sheets</h2>
+            <div class="cheatsheets-grid">
+                <div class="cheatsheet-card">
+                    <div class="cheatsheet-preview">
+                        <div class="preview-content">
+                            <div class="code-line"></div>
+                            <div class="code-line short"></div>
+                            <div class="code-line"></div>
+                            <div class="code-line medium"></div>
+                        </div>
+                    </div>
+                    <h3>Solidity Quick Reference</h3>
+                    <p>Essential Solidity syntax and patterns for smart contract development.</p>
+                    <button class="download-btn">Download PDF</button>
+                </div>
+
+                <div class="cheatsheet-card">
+                    <div class="cheatsheet-preview">
+                        <div class="preview-content">
+                            <div class="code-line"></div>
+                            <div class="code-line short"></div>
+                            <div class="code-line"></div>
+                            <div class="code-line medium"></div>
+                        </div>
+                    </div>
+                    <h3>Web3.js Commands</h3>
+                    <p>Most commonly used Web3.js methods and their usage examples.</p>
+                    <button class="download-btn">Download PDF</button>
+                </div>
+
+                <div class="cheatsheet-card">
+                    <div class="cheatsheet-preview">
+                        <div class="preview-content">
+                            <div class="code-line"></div>
+                            <div class="code-line short"></div>
+                            <div class="code-line"></div>
+                            <div class="code-line medium"></div>
+                        </div>
+                    </div>
+                    <h3>Python for AI/ML</h3>
+                    <p>Essential Python libraries and functions for machine learning projects.</p>
+                    <button class="download-btn">Download PDF</button>
+                </div>
+
+                <div class="cheatsheet-card">
+                    <div class="cheatsheet-preview">
+                        <div class="preview-content">
+                            <div class="code-line"></div>
+                            <div class="code-line short"></div>
+                            <div class="code-line"></div>
+                            <div class="code-line medium"></div>
+                        </div>
+                    </div>
+                    <h3>Git Commands</h3>
+                    <p>Essential Git commands for version control and collaboration.</p>
+                    <button class="download-btn">Download PDF</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="tab-content" id="community">
+        <div class="container">
+            <h2 class="section-title">Community Resources</h2>
+            <div class="community-grid">
+                <div class="community-card">
+                    <div class="community-icon">💬</div>
+                    <h3>Discord Community</h3>
+                    <p>Join our active Discord server with 10,000+ developers sharing knowledge and collaborating on projects.</p>
+                    <div class="community-stats">
+                        <span>10.2K Members</span>
+                        <span>Active 24/7</span>
+                    </div>
+                    <button class="join-btn">Join Discord</button>
+                </div>
+
+                <div class="community-card">
+                    <div class="community-icon">📱</div>
+                    <h3>Telegram Group</h3>
+                    <p>Quick discussions, announcements, and real-time help from the MetaHub Academy community.</p>
+                    <div class="community-stats">
+                        <span>5.8K Members</span>
+                        <span>Daily Updates</span>
+                    </div>
+                    <button class="join-btn">Join Telegram</button>
+                </div>
+
+                <div class="community-card">
+                    <div class="community-icon">🐙</div>
+                    <h3>GitHub Repository</h3>
+                    <p>Access open-source projects, contribute to the community, and showcase your work.</p>
+                    <div class="community-stats">
+                        <span>2.3K Stars</span>
+                        <span>450+ Contributors</span>
+                    </div>
+                    <button class="join-btn">View GitHub</button>
+                </div>
+
+                <div class="community-card">
+                    <div class="community-icon">📺</div>
+                    <h3>YouTube Channel</h3>
+                    <p>Weekly tutorials, live coding sessions, and tech talks from industry experts.</p>
+                    <div class="community-stats">
+                        <span>25K Subscribers</span>
+                        <span>Weekly Videos</span>
+                    </div>
+                    <button class="join-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">MetaHub</span>
+                        <span class="logo-accent">Academy</span>
+                    </div>
+                    <p>Shaping the future of education through technology</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Learning Guides</a></li>
+                            <li><a href="#">Video Tutorials</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Cheat Sheets</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="#">Discord</a></li>
+                            <li><a href="#">Telegram</a></li>
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Bug Reports</a></li>
+                            <li><a href="#">Feature Requests</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MetaHub Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="resources.js"></script>
+</body>
+</html>
