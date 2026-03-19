@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MetaHub Academy — QR Code</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: #060a14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #0d1526;
+      border: 1px solid rgba(240,180,41,0.18);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      max-width: 360px;
+      width: 100%;
+      box-shadow: 0 0 60px rgba(240,180,41,0.07);
+    }
+
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #f0b429;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    .tagline {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+
+    .qr-wrap {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 16px;
+      display: inline-block;
+      margin-bottom: 1.75rem;
+    }
+
+    .qr-wrap canvas,
+    .qr-wrap img { display: block; }
+
+    .url-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.5rem;
+    }
+
+    .url-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #f0b429;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #f0b429;
+      color: #060a14;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 0.65rem 1.4rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-download:hover { opacity: 0.88; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <p class="logo-text">MetaHub Academy</p>
+  <p class="tagline">Produce · Publish · Profit</p>
+
+  <div class="qr-wrap">
+    <div id="qrcode"></div>
+  </div>
+
+  <p class="url-label">Scan to visit</p>
+  <p class="url-text">metahubacademy.com</p>
+
+  <button class="btn-download" id="downloadBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PNG
+  </button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  const qr = new QRCode(document.getElementById('qrcode'), {
+    text: 'https://metahubacademy.com',
+    width: 240,
+    height: 240,
+    colorDark: '#000000',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.H,
+  });
+
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    const canvas = document.querySelector('#qrcode canvas');
+    if (!canvas) return;
+
+    const link = document.createElement('a');
+    link.download = 'metahubacademy-qr.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+</script>
+
+</body>
+</html>
