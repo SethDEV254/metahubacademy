@@ -55,6 +55,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+  /* ── sign up modal ── */
+  const signupOverlay = document.getElementById('signupOverlay');
+  const signupClose   = document.getElementById('signupClose');
+  const joinBtn       = document.getElementById('joinAcademyBtn');
+
+  const openSignup  = () => signupOverlay.classList.add('open');
+  const closeSignup = () => signupOverlay.classList.remove('open');
+
+  if (joinBtn) joinBtn.addEventListener('click', openSignup);
+  if (signupClose) signupClose.addEventListener('click', closeSignup);
+  signupOverlay.addEventListener('click', e => { if (e.target === signupOverlay) closeSignup(); });
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSignup(); });
+
+  const signupForm = document.getElementById('signupForm');
+  if (signupForm) {
+    signupForm.addEventListener('submit', () => {
+      setTimeout(() => {
+        signupForm.style.display = 'none';
+        document.getElementById('signupSuccess').style.display = 'block';
+        setTimeout(closeSignup, 3000);
+      }, 500);
+    });
+  }
+
   /* ── chat widget ── */
   const chatTrigger = document.getElementById('chatTrigger');
   const chatPopup   = document.getElementById('chatPopup');

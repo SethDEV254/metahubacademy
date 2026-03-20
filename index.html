@@ -89,10 +89,10 @@
     </h1>
     <p class="hero-sub">Show your potential by creating wealth on the internet. Master blockchain trading through the 3 pillars of online success.</p>
     <div class="hero-buttons">
-      <a href="store.html" class="btn-primary">
+      <button class="btn-primary" id="joinAcademyBtn">
         <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z"/></svg>
-        Get Started
-      </a>
+        Join Academy
+      </button>
       <a href="about-me.html" class="btn-secondary">About Me</a>
       <a href="my-ebooks.html" class="btn-secondary">My eBooks</a>
     </div>
@@ -315,6 +315,62 @@
     <span>Developed by <span style="color:#f0b429;font-weight:600;">@starico</span></span>
   </div>
 </footer>
+
+<!-- Sign Up Modal -->
+<div class="signup-overlay" id="signupOverlay">
+  <div class="signup-modal">
+    <button class="signup-close" id="signupClose" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="signup-header">
+      <div class="signup-logo">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop,q=95/Yg29nKaXyGhLNJy1/metahub-academy-logo-design-AVL7EDKb09IvqJG4.png" alt="MetaHub Academy">
+      </div>
+      <h2>Join MetaHub Academy</h2>
+      <p>Start your journey to financial freedom through blockchain &amp; crypto</p>
+    </div>
+    <form class="signup-form" id="signupForm" action="https://formsubmit.co/infor@metahubacademy.com" method="POST">
+      <input type="hidden" name="_subject" value="New Student Sign-Up — MetaHub Academy">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://metahubacademy.com">
+      <div class="signup-field">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="e.g. John Kamau" required>
+      </div>
+      <div class="signup-field">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="signup-field">
+        <label>Phone / WhatsApp</label>
+        <input type="tel" name="phone" placeholder="+254 7XX XXX XXX">
+      </div>
+      <div class="signup-field">
+        <label>I want to learn</label>
+        <select name="interest">
+          <option value="">Select a course...</option>
+          <option value="Crypto Trading">Crypto Trading</option>
+          <option value="DeFi & Blockchain">DeFi &amp; Blockchain</option>
+          <option value="Affiliate Marketing">Affiliate Marketing</option>
+          <option value="1-on-1 Mentorship">1-on-1 Mentorship</option>
+          <option value="Everything">Everything — I want it all</option>
+        </select>
+      </div>
+      <button type="submit" class="signup-submit">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Create My Account
+      </button>
+      <p class="signup-terms">By signing up you agree to be contacted by MetaHub Academy. No spam, ever.</p>
+    </form>
+    <div class="signup-success" id="signupSuccess" style="display:none;">
+      <div class="signup-success-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>You're in!</h3>
+      <p>Welcome to MetaHub Academy. We'll be in touch shortly at your email.</p>
+    </div>
+  </div>
+</div>
 
 <!-- Live Clock -->
 <div id="footerClock" class="live-clock"></div>
