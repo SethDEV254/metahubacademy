@@ -118,6 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('cartCheckout')?.addEventListener('click', checkout);
+  document.getElementById('cartCardPay')?.addEventListener('click', () => {
+    const cart = getCart();
+    if (!cart.length) return;
+    const total = getTotal().toFixed(2);
+    const note  = cart.map(i => `${i.name} x${i.qty}`).join(', ');
+    // PayPal hosted checkout — guest card payment available without PayPal account
+    const url = `https://www.paypal.com/send?recipient=${encodeURIComponent(PAYPAL_EMAIL)}&amount=${total}&note=${encodeURIComponent(note)}&currency_code=USD`;
+    window.open(url, '_blank');
+  });
 
   document.querySelectorAll('.btn-add-cart').forEach(btn => {
     btn.addEventListener('click', () => {
