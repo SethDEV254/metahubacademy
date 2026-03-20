@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join MetaHub Academy | Start Your Crypto Journey</title>
+  <meta name="description" content="Join MetaHub Academy and start your journey to financial freedom through blockchain, crypto trading, and digital wealth creation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ── Signup page ── */
+    .signup-page {
+      min-height: 100vh;
+      background: var(--bg-1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .signup-page-body {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1140px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 64px 32px 80px;
+      gap: 64px;
+      align-items: center;
+    }
+
+    /* ── Left: info panel ── */
+    .signup-info {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .signup-info-logo {
+      width: 140px;
+    }
+    .signup-info-logo img { width: 100%; }
+
+    .signup-info-headline {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .signup-info-headline .section-label { margin: 0; }
+    .signup-info-headline h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text-1);
+      margin: 0;
+    }
+    .signup-info-headline h1 span { color: var(--gold); }
+    .signup-info-headline p {
+      color: var(--text-2);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .signup-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .signup-benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .signup-benefit-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(240,180,41,.1);
+      border: 1px solid rgba(240,180,41,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+    .signup-benefit-text strong {
+      display: block;
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 2px;
+    }
+    .signup-benefit-text span {
+      font-size: .82rem;
+      color: var(--text-3);
+      line-height: 1.45;
+    }
+
+    .signup-social-proof {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: rgba(240,180,41,.06);
+      border: 1px solid rgba(240,180,41,.15);
+      border-radius: 14px;
+    }
+    .signup-avatars {
+      display: flex;
+    }
+    .signup-avatars span {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #e8a800);
+      border: 2px solid var(--bg-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .65rem;
+      font-weight: 700;
+      color: #000;
+      margin-left: -8px;
+    }
+    .signup-avatars span:first-child { margin-left: 0; }
+    .signup-proof-text {
+      font-size: .82rem;
+      color: var(--text-2);
+      line-height: 1.4;
+    }
+    .signup-proof-text strong { color: var(--gold); }
+
+    /* ── Right: form card ── */
+    .signup-form-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.25);
+    }
+    .signup-form-header { display: flex; flex-direction: column; gap: 6px; }
+    .signup-form-header h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-1);
+      margin: 0;
+    }
+    .signup-form-header p {
+      font-size: .88rem;
+      color: var(--text-3);
+      margin: 0;
+    }
+
+    .signup-form-fields { display: flex; flex-direction: column; gap: 16px; }
+    .sf-field { display: flex; flex-direction: column; gap: 7px; }
+    .sf-field label {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--text-2);
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+    .sf-field input,
+    .sf-field select {
+      padding: 13px 16px;
+      border: 1.5px solid var(--border);
+      background: var(--bg-1);
+      color: var(--text-1);
+      border-radius: 12px;
+      font-size: .94rem;
+      font-family: inherit;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+      width: 100%;
+      box-sizing: border-box;
+      appearance: none;
+    }
+    .sf-field input::placeholder { color: var(--text-3); opacity: .6; }
+    .sf-field input:focus,
+    .sf-field select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(240,180,41,.12);
+    }
+    .sf-field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23888' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    .sf-field select option { background: var(--bg-2); }
+
+    .sf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .signup-submit-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #f0b429, #e8a800);
+      color: #000;
+      font-size: .96rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      font-family: inherit;
+      letter-spacing: .02em;
+      transition: opacity .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 6px 24px rgba(240,180,41,.35);
+    }
+    .signup-submit-btn:hover {
+      opacity: .92;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 32px rgba(240,180,41,.45);
+    }
+    .signup-submit-btn:active { transform: translateY(0); }
+
+    .signup-terms {
+      font-size: .75rem;
+      color: var(--text-3);
+      text-align: center;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .signup-terms a { color: var(--gold); text-decoration: none; }
+
+    /* ── Success state ── */
+    .signup-success-state {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .signup-success-state.show { display: flex; }
+    .success-icon-wrap {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(74,222,128,.12);
+      border: 2px solid rgba(74,222,128,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .signup-success-state h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-1);
+      margin: 0;
+    }
+    .signup-success-state p {
+      color: var(--text-2);
+      margin: 0;
+      font-size: .92rem;
+      line-height: 1.6;
+    }
+    .signup-success-state .whatsapp-join-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .9rem;
+      transition: opacity .2s;
+      margin-top: 4px;
+    }
+    .signup-success-state .whatsapp-join-btn:hover { opacity: .88; }
+
+    /* ── Mobile ── */
+    @media (max-width: 820px) {
+      .signup-page-body {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px 60px;
+      }
+      .signup-info { order: 2; }
+      .signup-form-card { order: 1; padding: 28px 22px; }
+      .sf-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="signup-page">
+
+<!-- ══ NAVBAR ══ -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop,q=95/Yg29nKaXyGhLNJy1/metahub-academy-logo-design-AVL7EDKb09IvqJG4.png" alt="MetaHub Academy">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about-me.html">About Me</a></li>
+    <li><a href="store.html">Store</a></li>
+    <li><a href="my-ebooks.html">My eBooks</a></li>
+    <li><a href="partners-and-tools.html">Partners &amp; Tools</a></li>
+    <li><a href="blog-list.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-social">
+      <a href="https://chat.whatsapp.com/LWjWddwbkLA731j97IcNsG?mode=hqrt2" target="_blank" rel="noopener" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      <a href="https://youtube.com/@sethcryptolord?feature=shared" target="_blank" rel="noopener" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+      <a href="https://www.tiktok.com/@sethcryptolord?_t=8pgkH0Ad89G&_r=1" target="_blank" rel="noopener" title="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.52V6.76a4.85 4.85 0 01-1.03-.07z"/></svg></a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark mode">
+      <span class="toggle-icon-moon">🌙</span>
+      <span class="toggle-icon-sun">☀️</span>
+      <span class="toggle-thumb"><span id="toggleEmoji">🌙</span></span>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">🏠 Home</a>
+  <a href="about-me.html">👤 About Me</a>
+  <a href="store.html">🛒 Store</a>
+  <a href="my-ebooks.html">📚 My eBooks</a>
+  <a href="partners-and-tools.html">🤝 Partners &amp; Tools</a>
+  <a href="blog-list.html">✍️ Blog</a>
+  <a href="contact.html">📩 Contact</a>
+  <a href="signup.html">🎓 Join Academy</a>
+</div>
+
+<!-- ══ PAGE BODY ══ -->
+<div class="signup-page-body">
+
+  <!-- ── Left: info ── -->
+  <div class="signup-info reveal">
+    <div class="signup-info-logo">
+      <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop,q=95/Yg29nKaXyGhLNJy1/metahub-academy-logo-design-AVL7EDKb09IvqJG4.png" alt="MetaHub Academy">
+    </div>
+
+    <div class="signup-info-headline">
+      <span class="section-label">Join the Community</span>
+      <h1>Build Real <span>Wealth</span> Online</h1>
+      <p>MetaHub Academy has helped 1,000+ students across Africa master crypto trading, blockchain, and digital income streams. Your seat is waiting.</p>
+    </div>
+
+    <div class="signup-benefits">
+      <div class="signup-benefit">
+        <div class="signup-benefit-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div class="signup-benefit-text">
+          <strong>Live Coaching Sessions</strong>
+          <span>Real-time sessions with Seth CryptoLord — ask questions, get answers, trade live.</span>
+        </div>
+      </div>
+      <div class="signup-benefit">
+        <div class="signup-benefit-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div class="signup-benefit-text">
+          <strong>Private Community Access</strong>
+          <span>WhatsApp group with 1,000+ traders — signals, updates, and daily market analysis.</span>
+        </div>
+      </div>
+      <div class="signup-benefit">
+        <div class="signup-benefit-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <div class="signup-benefit-text">
+          <strong>Trade Signals &amp; Market Alerts</strong>
+          <span>Get notified before the market moves — entry points, exits, and risk management tips.</span>
+        </div>
+      </div>
+      <div class="signup-benefit">
+        <div class="signup-benefit-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        </div>
+        <div class="signup-benefit-text">
+          <strong>Exclusive Digital Resources</strong>
+          <span>eBooks, spreadsheets, course materials — all designed for the African crypto market.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="signup-social-proof">
+      <div class="signup-avatars">
+        <span>JK</span>
+        <span>AM</span>
+        <span>BN</span>
+        <span>+</span>
+      </div>
+      <div class="signup-proof-text">
+        <strong>1,000+ students</strong> already learning &amp; earning.<br>
+        Join them today — it's free to sign up.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Right: form ── -->
+  <div class="signup-form-card reveal">
+    <div class="signup-form-header">
+      <h2>Join MetaHub Academy</h2>
+      <p>Fill in your details and we'll be in touch within 24 hours.</p>
+    </div>
+
+    <form class="signup-form-fields" id="signupPageForm" action="https://formsubmit.co/infor@metahubacademy.com" method="POST">
+      <input type="hidden" name="_subject" value="New Community Sign-Up — MetaHub Academy">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://metahubacademy.com/signup.html?success=1">
+
+      <div class="sf-field">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="e.g. John Kamau" required>
+      </div>
+      <div class="sf-field">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="sf-row">
+        <div class="sf-field">
+          <label>Phone / WhatsApp</label>
+          <input type="tel" name="phone" placeholder="+254 7XX XXX XXX">
+        </div>
+        <div class="sf-field">
+          <label>Country</label>
+          <input type="text" name="country" placeholder="Kenya">
+        </div>
+      </div>
+      <div class="sf-field">
+        <label>I want to learn</label>
+        <select name="interest" required>
+          <option value="">Select a course...</option>
+          <option value="Crypto Trading">Crypto Trading</option>
+          <option value="DeFi & Blockchain">DeFi &amp; Blockchain</option>
+          <option value="Affiliate Marketing">Affiliate Marketing</option>
+          <option value="1-on-1 Mentorship">1-on-1 Mentorship</option>
+          <option value="Everything">Everything — I want it all</option>
+        </select>
+      </div>
+      <div class="sf-field">
+        <label>How did you hear about us?</label>
+        <select name="source">
+          <option value="">Select...</option>
+          <option value="YouTube">YouTube</option>
+          <option value="TikTok">TikTok</option>
+          <option value="WhatsApp">WhatsApp</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Friend / Referral">Friend / Referral</option>
+          <option value="Google">Google</option>
+        </select>
+      </div>
+
+      <button type="submit" class="signup-submit-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Create My Account — It's Free
+      </button>
+      <p class="signup-terms">By signing up you agree to be contacted by MetaHub Academy. No spam, ever. <a href="#">Privacy Policy</a></p>
+    </form>
+
+    <!-- Success state -->
+    <div class="signup-success-state" id="signupSuccessState">
+      <div class="success-icon-wrap">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>You're in!</h3>
+      <p>Welcome to MetaHub Academy. We'll reach out within 24 hours.<br>In the meantime, join our WhatsApp community.</p>
+      <a href="https://chat.whatsapp.com/LWjWddwbkLA731j97IcNsG?mode=hqrt2" target="_blank" rel="noopener" class="whatsapp-join-btn">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Join WhatsApp Community
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <p>MetaHub Academy — empowering individuals to create real wealth online through blockchain, crypto trading, and digital content creation since 2017.</p>
+      <div class="footer-socials">
+        <a href="https://chat.whatsapp.com/LWjWddwbkLA731j97IcNsG?mode=hqrt2" target="_blank" rel="noopener" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="https://youtube.com/@sethcryptolord?feature=shared" target="_blank" rel="noopener" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+        <a href="https://www.tiktok.com/@sethcryptolord?_t=8pgkH0Ad89G&_r=1" target="_blank" rel="noopener" title="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.52V6.76a4.85 4.85 0 01-1.03-.07z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="my-ebooks.html">My eBooks</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Community</h4>
+      <ul>
+        <li><a href="signup.html">Join Academy</a></li>
+        <li><a href="https://chat.whatsapp.com/LWjWddwbkLA731j97IcNsG?mode=hqrt2" target="_blank" rel="noopener">WhatsApp Group</a></li>
+        <li><a href="https://youtube.com/@sethcryptolord" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="contact.html">Contact Seth</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2017 – 2025 MetaHub Academy. All rights reserved.</span>
+    <span>Blockchain Trading · Crypto Coaching · Digital Wealth</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Show success state if redirected back after form submit
+  if (new URLSearchParams(window.location.search).get('success') === '1') {
+    document.getElementById('signupPageForm').style.display = 'none';
+    document.getElementById('signupSuccessState').classList.add('show');
+  }
+</script>
+</body>
+</html>
