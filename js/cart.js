@@ -147,6 +147,41 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open(buildPayPalUrl(total, note), '_blank');
   });
 
+  /* ── Crypto form toggle ── */
+  const cryptoFormEl = document.getElementById('cryptoCheckoutForm');
+  document.getElementById('showCryptoFormBtn')?.addEventListener('click', () => {
+    const open = cryptoFormEl.classList.toggle('visible');
+    if (open) {
+      document.getElementById('cryptoAmountDisplay').textContent = `$${getTotal().toFixed(2)}`;
+      cryptoFormEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+
+  /* ── Crypto coin selection ── */
+  document.querySelectorAll('.crypto-coin-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.crypto-coin-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const addr = btn.dataset.address;
+      document.getElementById('cryptoAddressText').textContent = addr;
+      document.getElementById('cryptoSelectedLabel').textContent = btn.dataset.label;
+      document.getElementById('cryptoCoinName').textContent = btn.dataset.symbol;
+      document.getElementById('cryptoCopyLabel').textContent = 'Copy';
+      document.getElementById('cryptoQR').src =
+        `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(addr)}&bgcolor=ffffff&color=000000&margin=10`;
+    });
+  });
+
+  /* ── Crypto copy address ── */
+  document.getElementById('cryptoCopyBtn')?.addEventListener('click', () => {
+    const addr = document.getElementById('cryptoAddressText').textContent;
+    navigator.clipboard.writeText(addr).then(() => {
+      const label = document.getElementById('cryptoCopyLabel');
+      label.textContent = 'Copied!';
+      setTimeout(() => { label.textContent = 'Copy'; }, 2000);
+    });
+  });
+
   /* ── Card form toggle ── */
   const cardFormEl = document.getElementById('cardCheckoutForm');
   document.getElementById('showCardFormBtn')?.addEventListener('click', () => {

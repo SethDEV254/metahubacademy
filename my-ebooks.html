@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
 
@@ -98,10 +99,10 @@
           <div class="ebook-price-row">
             <span class="ebook-price">$30 <span class="ebook-price-note">/ digital copy</span></span>
           </div>
-          <a href="https://metahubacademy.com/crypto-truth-guide" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;margin-top:auto;">
+          <button class="btn-add-cart btn-primary" style="width:100%;justify-content:center;margin-top:auto;" data-id="crypto-truth-guide" data-name="The Crypto Truth Guide" data-price="30">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21h6"/></svg>
             Buy Now
-          </a>
+          </button>
         </div>
       </div>
 
@@ -127,10 +128,10 @@
           <div class="ebook-price-row">
             <span class="ebook-price">$20 <span class="ebook-price-note">/ digital copy</span></span>
           </div>
-          <a href="https://metahubacademy.com/proven-steps-to-6-figure-affiliate-marketing" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;margin-top:auto;">
+          <button class="btn-add-cart btn-primary" style="width:100%;justify-content:center;margin-top:auto;" data-id="affiliate-blueprint" data-name="7 Proven Steps to 1M$ Affiliate Marketing" data-price="20">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21h6"/></svg>
             Buy Now
-          </a>
+          </button>
         </div>
       </div>
 
@@ -145,10 +146,10 @@
     <h2>Invest in Your Knowledge Today</h2>
     <p>Both eBooks are available for instant digital download. Grab them now and start applying Seth's proven strategies to your crypto journey.</p>
     <div class="cta-buttons">
-      <a href="https://metahubacademy.com/crypto-truth-guide" target="_blank" rel="noopener" class="btn-primary">
+      <button class="btn-add-cart btn-primary" data-id="crypto-truth-guide" data-name="The Crypto Truth Guide" data-price="30">
         <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21h6"/></svg>
         Get Crypto Truth Guide
-      </a>
+      </button>
       <a href="store.html" class="btn-secondary">View All Products</a>
     </div>
   </div>
@@ -203,5 +204,6 @@
 </a>
 
 <script src="js/main.js"></script>
+<script src="js/cart.js"></script>
 </body>
 </html>

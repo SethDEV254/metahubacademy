@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/cart.css?v=2">
 </head>
 <body>
 
@@ -115,23 +115,31 @@
             </div>
           </div>
 
-          <!-- PayPal -->
-          <button class="checkout-btn checkout-paypal" id="paypalCheckoutBtn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.067 8.478c.492.88.556 2.014.3 3.327-.74 3.806-3.276 5.12-6.514 5.12h-.5a.805.805 0 0 0-.794.68l-.04.22-.63 3.993-.032.17a.804.804 0 0 1-.794.679H8.97a.483.483 0 0 1-.477-.558l.184-1.162.01-.07.985-6.24.063-.399a.804.804 0 0 1 .794-.68h.5c3.808 0 6.79-1.548 7.664-6.02.365-1.876.176-3.44-.786-4.54a3.64 3.64 0 0 0-1.04-.784c.386.959.508 2.127.2 3.564z"/><path d="M18.067 4.914a5.98 5.98 0 0 0-.752-.267 8.316 8.316 0 0 0-1.093-.2A13.52 13.52 0 0 0 14.2 4.3H7.93a.805.805 0 0 0-.795.68L5.58 17.77a.484.484 0 0 0 .478.558h3.483l.874-5.545-.027.17a.805.805 0 0 1 .795-.68h1.654c3.238 0 5.774-1.315 6.514-5.12.022-.113.04-.224.057-.332a4.22 4.22 0 0 0-.674-.304l-.667-.603z"/></svg>
-            Pay with PayPal
-          </button>
-
-          <div class="checkout-divider"><span>or</span></div>
-
           <!-- Card -->
-          <button class="checkout-btn checkout-card" id="showCardFormBtn">
+          <button id="showCardFormBtn" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:15px 20px;border-radius:14px;font-size:.92rem;font-weight:700;cursor:pointer;font-family:inherit;border:none;background:linear-gradient(135deg,#1a56db,#1e40af);color:#fff;box-shadow:0 4px 20px rgba(26,86,219,.4);transition:opacity .2s,transform .15s;">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
             Pay with Card
-            <span class="card-brands-row">
+            <span style="display:flex;align-items:center;gap:4px;margin-left:auto;">
               <svg width="30" height="19" viewBox="0 0 48 30" fill="none"><rect width="48" height="30" rx="4" fill="#1A1F71"/><text x="8" y="22" font-family="Arial" font-weight="bold" font-size="14" fill="#fff" letter-spacing="1">VISA</text></svg>
               <svg width="30" height="19" viewBox="0 0 48 30" fill="none"><rect width="48" height="30" rx="4" fill="#252525"/><circle cx="19" cy="15" r="9" fill="#EB001B"/><circle cx="29" cy="15" r="9" fill="#F79E1B"/><path d="M24 8.27a9 9 0 010 13.46A9 9 0 0124 8.27z" fill="#FF5F00"/></svg>
               <svg width="30" height="19" viewBox="0 0 48 30" fill="none"><rect width="48" height="30" rx="4" fill="#2E77BC"/><text x="7" y="21" font-family="Arial" font-weight="bold" font-size="11" fill="#fff">AMEX</text></svg>
             </span>
+          </button>
+
+          <div class="checkout-divider"><span>or</span></div>
+
+          <!-- Crypto -->
+          <button id="showCryptoFormBtn" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:15px 20px;border-radius:14px;font-size:.92rem;font-weight:700;cursor:pointer;font-family:inherit;border:none;background:linear-gradient(135deg,#f7931a,#e07208);color:#000;box-shadow:0 4px 20px rgba(247,147,26,.4);transition:opacity .2s,transform .15s;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M9 8h4.5a2.5 2.5 0 010 5H9m0-5v5m0 0h5a2.5 2.5 0 010 5H9m0-5v5M12 6v2m0 8v2"/></svg>
+            Pay with Crypto
+          </button>
+
+          <div class="checkout-divider"><span>or</span></div>
+
+          <!-- PayPal -->
+          <button class="checkout-btn checkout-paypal" id="paypalCheckoutBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.067 8.478c.492.88.556 2.014.3 3.327-.74 3.806-3.276 5.12-6.514 5.12h-.5a.805.805 0 0 0-.794.68l-.04.22-.63 3.993-.032.17a.804.804 0 0 1-.794.679H8.97a.483.483 0 0 1-.477-.558l.184-1.162.01-.07.985-6.24.063-.399a.804.804 0 0 1 .794-.68h.5c3.808 0 6.79-1.548 7.664-6.02.365-1.876.176-3.44-.786-4.54a3.64 3.64 0 0 0-1.04-.784c.386.959.508 2.127.2 3.564z"/><path d="M18.067 4.914a5.98 5.98 0 0 0-.752-.267 8.316 8.316 0 0 0-1.093-.2A13.52 13.52 0 0 0 14.2 4.3H7.93a.805.805 0 0 0-.795.68L5.58 17.77a.484.484 0 0 0 .478.558h3.483l.874-5.545-.027.17a.805.805 0 0 1 .795-.68h1.654c3.238 0 5.774-1.315 6.514-5.12.022-.113.04-.224.057-.332a4.22 4.22 0 0 0-.674-.304l-.667-.603z"/></svg>
+            Pay with PayPal
           </button>
         </div>
 
@@ -192,6 +200,72 @@
           </form>
         </div>
 
+        <!-- Crypto checkout form (hidden by default) -->
+        <div class="crypto-checkout-form" id="cryptoCheckoutForm">
+
+          <!-- Coin selector -->
+          <div class="crypto-coin-grid">
+            <button class="crypto-coin-btn active" data-address="18FMwrqkWk2kyyALgn9TMrFVzyC64Y7Ey" data-label="Bitcoin (BTC)" data-symbol="BTC">
+              <span class="coin-logo" style="background:rgba(247,147,26,.18);color:#f7931a;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14.24 10.56c.31-2.03-1.24-2.45-2.8-2.81L12 5.82l-1.22.31.46 1.83-1 .25-.46-1.83-1.22.31.46 1.83-2.47.62.31 1.22s.9-.24.88-.21c.5-.13.72.16.79.37l1.14 4.55c.01.17-.02.48-.38.57.02.01-.88.22-.88.22l.15 1.46 2.33-.59.47 1.87 1.22-.31-.47-1.87 1-.25.47 1.87 1.22-.31-.47-1.87c2.08-.67 3.3-1.93 3-3.88zm-4.63 3.24-.8-3.17c.74-.19 3.04-.76 3.39 1.07.37 1.89-1.85 1.91-2.59 2.1zm1.04-4.42-.72-2.87c.61-.15 2.51-.64 2.82.94.32 1.62-1.48 1.78-2.1 1.93z"/></svg>
+              </span>
+              <span class="crypto-coin-name">BTC</span>
+              <span class="crypto-coin-full">Bitcoin</span>
+            </button>
+            <button class="crypto-coin-btn" data-address="0x08f36247a685c12df031ef66949157e76498b7fd" data-label="Ethereum (ETH)" data-symbol="ETH">
+              <span class="coin-logo" style="background:rgba(98,126,234,.18);color:#627eea;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.75l-6.25 10.5L12 15.5l6.25-3.25L12 1.75zM5.75 13.5L12 22.25l6.25-8.75L12 17l-6.25-3.5z"/></svg>
+              </span>
+              <span class="crypto-coin-name">ETH</span>
+              <span class="crypto-coin-full">Ethereum</span>
+            </button>
+            <button class="crypto-coin-btn" data-address="THXrWByREEno2cFdCqA14epHFPa8iiC1cm" data-label="USDT TRC-20" data-symbol="USDT">
+              <span class="coin-logo" style="background:rgba(38,161,123,.18);color:#26a17b;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/><text x="5" y="16" font-size="9" font-weight="bold" font-family="Arial">₮</text></svg>
+              </span>
+              <span class="crypto-coin-name">USDT</span>
+              <span class="crypto-coin-full">TRC-20</span>
+            </button>
+            <button class="crypto-coin-btn" data-address="0x08f36247a685c12df031ef66949157e76498b7fd" data-label="USDT ERC-20" data-symbol="USDT">
+              <span class="coin-logo" style="background:rgba(38,161,123,.18);color:#26a17b;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/><text x="5" y="16" font-size="9" font-weight="bold" font-family="Arial">₮</text></svg>
+              </span>
+              <span class="crypto-coin-name">USDT</span>
+              <span class="crypto-coin-full">ERC-20</span>
+            </button>
+            <button class="crypto-coin-btn" data-address="0x08f36247a685c12df031ef66949157e76498b7fd" data-label="BNB (BEP-20)" data-symbol="BNB">
+              <span class="coin-logo" style="background:rgba(243,186,47,.18);color:#f3ba2f;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </span>
+              <span class="crypto-coin-name">BNB</span>
+              <span class="crypto-coin-full">BEP-20</span>
+            </button>
+          </div>
+
+          <!-- QR + address panel -->
+          <div class="crypto-address-panel">
+            <div class="crypto-qr-wrap">
+              <img id="cryptoQR" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=18FMwrqkWk2kyyALgn9TMrFVzyC64Y7Ey&bgcolor=ffffff&color=000000&margin=10" alt="Wallet QR Code" class="crypto-qr-img">
+            </div>
+            <div class="crypto-selected-info">
+              <span class="crypto-selected-label" id="cryptoSelectedLabel">Bitcoin (BTC)</span>
+              <span class="crypto-send-amount">Send <strong id="cryptoAmountDisplay">$0.00</strong> USD equivalent</span>
+            </div>
+            <div class="crypto-address-wrap">
+              <span class="crypto-address-text" id="cryptoAddressText">18FMwrqkWk2kyyALgn9TMrFVzyC64Y7Ey</span>
+              <button class="crypto-copy-btn" id="cryptoCopyBtn">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path stroke-linecap="round" d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                <span id="cryptoCopyLabel">Copy</span>
+              </button>
+            </div>
+            <ol class="crypto-steps">
+              <li>Select your coin above</li>
+              <li>Scan the QR code or copy the address</li>
+              <li>Send the exact USD equivalent in <strong id="cryptoCoinName">BTC</strong></li>
+            </ol>
+          </div>
+        </div>
+
       </div>
     </div><!-- end grid -->
   </div>
@@ -236,7 +310,7 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
-<script src="js/cart.js"></script>
+<script src="js/main.js?v=2"></script>
+<script src="js/cart.js?v=2"></script>
 </body>
 </html>
