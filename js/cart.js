@@ -120,18 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('cartCheckout')?.addEventListener('click', checkout);
 
   /* ── Card panel ── */
-  const cartPanel  = document.getElementById('cartPanel');
-  const cardPanel  = document.getElementById('cardPanel');
+  const cardPanel = document.getElementById('cardPanel');
 
   const openCardPanel = () => {
     if (!getCart().length) return;
     document.getElementById('cardFormTotal').textContent = getTotal().toFixed(2);
-    cartPanel?.classList.add('slide-out');
-    cardPanel?.classList.add('slide-in');
+    cardPanel?.classList.add('active');
   };
   const closeCardPanel = () => {
-    cartPanel?.classList.remove('slide-out');
-    cardPanel?.classList.remove('slide-in');
+    cardPanel?.classList.remove('active');
   };
 
   document.getElementById('cartCardPay')?.addEventListener('click', openCardPanel);
