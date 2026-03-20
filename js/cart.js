@@ -92,13 +92,15 @@ const closeCart = () => {
   document.getElementById('cartOverlay')?.classList.remove('open');
 };
 
+const buildPayPalUrl = (total, note) =>
+  `https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=${encodeURIComponent(PAYPAL_EMAIL)}&amount=${total}&currency_code=USD&item_name=${encodeURIComponent(note)}&no_note=0&bn=PP-DonationsBF`;
+
 const checkout = () => {
   const cart = getCart();
   if (!cart.length) return;
   const total = getTotal().toFixed(2);
   const note  = cart.map(i => `${i.name} x${i.qty}`).join(', ');
-  const url   = `https://www.paypal.com/send?recipient=${encodeURIComponent(PAYPAL_EMAIL)}&amount=${total}&note=${encodeURIComponent(note)}&currency_code=USD`;
-  window.open(url, '_blank');
+  window.open(buildPayPalUrl(total, note), '_blank');
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -222,7 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     setTimeout(() => {
-      checkout();
+      const cart = getCart();
+      const total = getTotal().toFixed(2);
+      const note  = cart.map(i => `${i.name} x${i.qty}`).join(', ');
+      window.open(buildPayPalUrl(total, note), '_blank');
       payBtn.disabled = false;
       payBtn.innerHTML = `
         <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V7a5 5 0 0110 0v4"/></svg>
