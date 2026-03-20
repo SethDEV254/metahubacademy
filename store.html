@@ -33,10 +33,10 @@
       <a href="https://youtube.com/@sethcryptolord?feature=shared" target="_blank" rel="noopener" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
       <a href="https://www.tiktok.com/@sethcryptolord?_t=8pgkH0Ad89G&_r=1" target="_blank" rel="noopener" title="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.52V6.76a4.85 4.85 0 01-1.03-.07z"/></svg></a>
     </div>
-    <button class="cart-nav-btn" id="cartNavBtn" aria-label="View cart" title="Your cart">
+    <a href="cart.html" class="cart-nav-btn" title="View cart">
       <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path stroke-linecap="round" stroke-linejoin="round" d="M1 1h4l2.68 13.39a2 2 0 001.99 1.61h9.72a2 2 0 001.97-1.67l1.38-9.33H5.12"/></svg>
       <span class="cart-badge" id="cartBadge">0</span>
-    </button>
+    </a>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark mode">
       <span class="toggle-icon-moon">🌙</span>
       <span class="toggle-icon-sun">☀️</span>
@@ -322,113 +322,6 @@
 <a href="https://chat.whatsapp.com/LWjWddwbkLA731j97IcNsG?mode=hqrt2" class="whatsapp-bubble" target="_blank" rel="noopener" title="Chat on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
-
-<!-- ══ CART DRAWER ══ -->
-<div class="cart-overlay" id="cartOverlay"></div>
-<div class="cart-drawer" id="cartDrawer">
-
-  <!-- ── Cart panel ── -->
-  <div class="cart-panel" id="cartPanel">
-    <div class="cart-header">
-      <h3>Your Cart</h3>
-      <button class="cart-drawer-close" id="cartDrawerClose">✕</button>
-    </div>
-    <div class="cart-items" id="cartItems">
-      <p class="cart-empty">Your cart is empty.</p>
-    </div>
-    <div class="cart-footer">
-      <div class="cart-total-row">
-        <span class="cart-total-label">Total</span>
-        <span class="cart-total-amount">$<span id="cartTotal">0.00</span></span>
-      </div>
-      <button class="btn-primary" id="cartCheckout" style="width:100%;justify-content:center;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.067 8.478c.492.88.556 2.014.3 3.327-.74 3.806-3.276 5.12-6.514 5.12h-.5a.805.805 0 0 0-.794.68l-.04.22-.63 3.993-.032.17a.804.804 0 0 1-.794.679H8.97a.483.483 0 0 1-.477-.558l.184-1.162.01-.07.985-6.24.063-.399a.804.804 0 0 1 .794-.68h.5c3.808 0 6.79-1.548 7.664-6.02.365-1.876.176-3.44-.786-4.54a3.64 3.64 0 0 0-1.04-.784c.386.959.508 2.127.2 3.564z"/><path d="M18.067 4.914a5.98 5.98 0 0 0-.752-.267 8.316 8.316 0 0 0-1.093-.2A13.52 13.52 0 0 0 14.2 4.3H7.93a.805.805 0 0 0-.795.68L5.58 17.77a.484.484 0 0 0 .478.558h3.483l.874-5.545-.027.17a.805.805 0 0 1 .795-.68h1.654c3.238 0 5.774-1.315 6.514-5.12.022-.113.04-.224.057-.332a4.22 4.22 0 0 0-.674-.304l-.667-.603z"/></svg>
-        Pay with PayPal
-      </button>
-      <div class="cart-divider"><span>or pay with card</span></div>
-      <button class="btn-card" id="cartCardPay">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        Pay with Card
-        <span class="card-brands">
-          <svg width="32" height="20" viewBox="0 0 48 30" fill="none"><rect width="48" height="30" rx="4" fill="#1A1F71"/><text x="8" y="22" font-family="Arial" font-weight="bold" font-size="14" fill="#fff" letter-spacing="1">VISA</text></svg>
-          <svg width="32" height="20" viewBox="0 0 48 30" fill="none"><rect width="48" height="30" rx="4" fill="#252525"/><circle cx="19" cy="15" r="9" fill="#EB001B"/><circle cx="29" cy="15" r="9" fill="#F79E1B"/><path d="M24 8.27a9 9 0 010 13.46A9 9 0 0124 8.27z" fill="#FF5F00"/></svg>
-          <svg width="32" height="20" viewBox="0 0 48 30" fill="none"><rect width="48" height="30" rx="4" fill="#2E77BC"/><text x="7" y="21" font-family="Arial" font-weight="bold" font-size="11" fill="#fff">AMEX</text></svg>
-        </span>
-      </button>
-      <button class="btn-secondary clear-btn" id="cartClear" style="width:100%;justify-content:center;">Clear Cart</button>
-    </div>
-  </div>
-
-  <!-- ── Card form panel ── -->
-  <div class="card-panel" id="cardPanel">
-    <div class="cart-header">
-      <button class="card-back-btn" id="cardPanelBack">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m7-7l-7 7 7 7"/></svg>
-        Back
-      </button>
-      <h3>Card Details</h3>
-      <div style="width:60px;"></div>
-    </div>
-    <div class="card-form-body">
-      <!-- Visual card preview -->
-      <div class="card-preview" id="cardPreview">
-        <div class="card-preview-top">
-          <svg width="38" height="30" viewBox="0 0 38 30" class="card-chip"><rect width="38" height="30" rx="5" fill="#d4af37" opacity=".9"/><rect x="1" y="10" width="36" height="10" fill="none" stroke="#b8960c" stroke-width=".6"/><rect x="13" y="1" width="12" height="28" fill="none" stroke="#b8960c" stroke-width=".6"/></svg>
-          <span class="card-preview-brand-txt" id="previewBrandTxt"></span>
-        </div>
-        <div class="card-preview-number" id="previewNumber">•••• •••• •••• ••••</div>
-        <div class="card-preview-bottom">
-          <div>
-            <div class="card-preview-label">Card Holder</div>
-            <div class="card-preview-value" id="previewName">YOUR NAME</div>
-          </div>
-          <div>
-            <div class="card-preview-label">Expires</div>
-            <div class="card-preview-value" id="previewExp">MM/YY</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Form -->
-      <form class="card-form" id="cardForm" novalidate>
-        <div class="card-field-group">
-          <label for="cardNumber">Card Number</label>
-          <div class="card-input-wrap">
-            <input id="cardNumber" type="text" placeholder="1234 5678 9012 3456" maxlength="19" inputmode="numeric" autocomplete="cc-number">
-            <span class="card-type-badge" id="cardTypeBadge"></span>
-          </div>
-        </div>
-        <div class="card-field-group">
-          <label for="cardName">Name on Card</label>
-          <input id="cardName" type="text" placeholder="JOHN DOE" autocomplete="cc-name">
-        </div>
-        <div class="card-field-row">
-          <div class="card-field-group">
-            <label for="cardExpiry">Expiry</label>
-            <input id="cardExpiry" type="text" placeholder="MM/YY" maxlength="5" inputmode="numeric" autocomplete="cc-exp">
-          </div>
-          <div class="card-field-group">
-            <label for="cardCvv">CVV</label>
-            <input id="cardCvv" type="password" placeholder="•••" maxlength="4" inputmode="numeric" autocomplete="cc-csc">
-          </div>
-        </div>
-        <div class="card-order-total">
-          Order Total: <strong>$<span id="cardFormTotal">0.00</span></strong>
-        </div>
-        <div class="card-error" id="cardError"></div>
-        <button type="submit" class="btn-primary" id="cardPayBtn" style="width:100%;justify-content:center;">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V7a5 5 0 0110 0v4"/></svg>
-          Pay Now
-        </button>
-        <p class="card-secure-note">
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V7a5 5 0 0110 0v4"/></svg>
-          Secured &amp; processed via PayPal
-        </p>
-      </form>
-    </div>
-  </div>
-
-</div>
 
 <script src="js/main.js"></script>
 <script src="js/cart.js"></script>
