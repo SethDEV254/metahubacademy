@@ -118,14 +118,120 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('cartCheckout')?.addEventListener('click', checkout);
-  document.getElementById('cartCardPay')?.addEventListener('click', () => {
-    const cart = getCart();
-    if (!cart.length) return;
-    const total = getTotal().toFixed(2);
-    const note  = cart.map(i => `${i.name} x${i.qty}`).join(', ');
-    // PayPal hosted checkout — guest card payment available without PayPal account
-    const url = `https://www.paypal.com/send?recipient=${encodeURIComponent(PAYPAL_EMAIL)}&amount=${total}&note=${encodeURIComponent(note)}&currency_code=USD`;
-    window.open(url, '_blank');
+
+  /* ── Card panel ── */
+  const cartPanel  = document.getElementById('cartPanel');
+  const cardPanel  = document.getElementById('cardPanel');
+
+  const openCardPanel = () => {
+    if (!getCart().length) return;
+    document.getElementById('cardFormTotal').textContent = getTotal().toFixed(2);
+    cartPanel?.classList.add('slide-out');
+    cardPanel?.classList.add('slide-in');
+  };
+  const closeCardPanel = () => {
+    cartPanel?.classList.remove('slide-out');
+    cardPanel?.classList.remove('slide-in');
+  };
+
+  document.getElementById('cartCardPay')?.addEventListener('click', openCardPanel);
+  document.getElementById('cardPanelBack')?.addEventListener('click', closeCardPanel);
+
+  /* ── Card type detection ── */
+  const CARD_TYPES = [
+    { name: 'AMEX',       pattern: /^3[47]/,  color: '#2E77BC', max: 15 },
+    { name: 'VISA',       pattern: /^4/,       color: '#1A1F71', max: 16 },
+    { name: 'MASTERCARD', pattern: /^5[1-5]|^2[2-7]/, color: '#252525', max: 16 },
+    { name: 'DISCOVER',   pattern: /^6(?:011|5)/, color: '#FF6600', max: 16 },
+  ];
+
+  const detectCard = num => CARD_TYPES.find(t => t.pattern.test(num)) || null;
+
+  const updateCardPreview = () => {
+    const rawNum  = document.getElementById('cardNumber').value.replace(/\s/g, '');
+    const name    = document.getElementById('cardName').value.trim() || 'YOUR NAME';
+    const expiry  = document.getElementById('cardExpiry').value || 'MM/YY';
+    const type    = detectCard(rawNum);
+
+    // number display
+    const padded = rawNum.padEnd(16, '•');
+    document.getElementById('previewNumber').textContent =
+      padded.match(/.{1,4}/g)?.join(' ') || '•••• •••• •••• ••••';
+
+    document.getElementById('previewName').textContent = name.toUpperCase().slice(0, 20);
+    document.getElementById('previewExp').textContent  = expiry;
+    document.getElementById('previewBrandTxt').textContent = type ? type.name : '';
+
+    // badge in input
+    const badge = document.getElementById('cardTypeBadge');
+    if (type) {
+      badge.textContent = type.name;
+      badge.style.cssText = `background:${type.color};color:#fff;`;
+    } else {
+      badge.textContent = '';
+      badge.style.cssText = '';
+    }
+  };
+
+  /* ── Card number formatting ── */
+  document.getElementById('cardNumber')?.addEventListener('input', e => {
+    let val = e.target.value.replace(/\D/g, '');
+    const type = detectCard(val);
+    const max = type?.max || 16;
+    val = val.slice(0, max);
+    e.target.value = val.match(/.{1,4}/g)?.join(' ') || val;
+    updateCardPreview();
+  });
+
+  /* ── Expiry formatting ── */
+  document.getElementById('cardExpiry')?.addEventListener('input', e => {
+    let val = e.target.value.replace(/\D/g, '').slice(0, 4);
+    if (val.length >= 3) val = val.slice(0, 2) + '/' + val.slice(2);
+    e.target.value = val;
+    updateCardPreview();
+  });
+
+  document.getElementById('cardName')?.addEventListener('input', updateCardPreview);
+
+  /* ── Form validation & submit ── */
+  document.getElementById('cardForm')?.addEventListener('submit', e => {
+    e.preventDefault();
+    const errorEl  = document.getElementById('cardError');
+    const payBtn   = document.getElementById('cardPayBtn');
+    const num      = document.getElementById('cardNumber').value.replace(/\s/g, '');
+    const name     = document.getElementById('cardName').value.trim();
+    const expiry   = document.getElementById('cardExpiry').value;
+    const cvv      = document.getElementById('cardCvv').value.trim();
+
+    errorEl.textContent = '';
+
+    if (num.length < 13) return (errorEl.textContent = 'Enter a valid card number.');
+    if (!name)           return (errorEl.textContent = 'Enter the name on your card.');
+    if (!/^\d{2}\/\d{2}$/.test(expiry)) return (errorEl.textContent = 'Enter expiry as MM/YY.');
+    if (cvv.length < 3)  return (errorEl.textContent = 'Enter a valid CVV.');
+
+    // Check expiry date
+    const [mm, yy] = expiry.split('/').map(Number);
+    const now = new Date();
+    const expDate = new Date(2000 + yy, mm - 1);
+    if (expDate < new Date(now.getFullYear(), now.getMonth())) {
+      return (errorEl.textContent = 'Card has expired.');
+    }
+
+    payBtn.disabled = true;
+    payBtn.innerHTML = `
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="animation:spin .7s linear infinite"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+      Processing…
+    `;
+
+    setTimeout(() => {
+      checkout();
+      payBtn.disabled = false;
+      payBtn.innerHTML = `
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Pay Now
+      `;
+    }, 1800);
   });
 
   document.querySelectorAll('.btn-add-cart').forEach(btn => {
