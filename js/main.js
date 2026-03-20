@@ -4,6 +4,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ── Developer credits ── */
+  const credits = document.createElement('div');
+  credits.className = 'dev-credits';
+  credits.innerHTML = 'Developed by <span>@starico</span>';
+  document.body.appendChild(credits);
+
   /* ── Sticky navbar on scroll ── */
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => {

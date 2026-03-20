@@ -1489,3 +1489,30 @@ footer {
   .info-card { padding: 0.9rem 1rem; }
   .page-section { padding: 0; }
 }
+
+/* ── Hide WhatsApp bubble ── */
+.whatsapp-bubble { display: none !important; }
+
+/* ── Developer credits bar ── */
+.dev-credits {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(6,10,20,.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(240,180,41,.15);
+  padding: 7px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: .7rem;
+  color: rgba(255,255,255,.4);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: .04em;
+  pointer-events: none;
+}
+.dev-credits span { color: rgba(240,180,41,.75); font-weight: 700; }
