@@ -1397,7 +1397,7 @@ footer {
 }
 .featured-partner:hover { border-color: rgba(240,180,41,0.2); box-shadow: var(--glow-gold); }
 .featured-partner-logo {
-  width: 340px; min-height: 200px; border-radius: 14px;
+  width: 220px; min-height: 140px; border-radius: 14px;
   background: var(--bg-2); border: 1px solid var(--card-border);
   display: flex; align-items: center; justify-content: center;
   font-size: 2.6rem; flex-shrink: 0; overflow: hidden;
