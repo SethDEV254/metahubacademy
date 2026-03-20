@@ -206,39 +206,54 @@
           <!-- Coin selector -->
           <div class="crypto-coin-grid">
             <button class="crypto-coin-btn active" data-address="18FMwrqkWk2kyyALgn9TMrFVzyC64Y7Ey" data-label="Bitcoin (BTC)" data-symbol="BTC">
-              <span class="coin-logo" style="background:rgba(247,147,26,.18);">
-                <svg width="22" height="22" viewBox="0 0 32 32" fill="#f7931a"><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm3.912 13.472c.14-1.01-.618-1.555-1.672-1.918l.342-1.37-1.05-.262-.332 1.332c-.277-.07-.56-.135-.843-.2l.334-1.34-1.05-.262-.341 1.37c-.229-.052-.454-.104-.673-.158l.001-.005-1.45-.362-.28 1.122s.775.178.76.189c.423.106.5.385.486.607l-.486 1.948.118.03a.45.45 0 01-.12-.033l-.682 2.73c-.052.128-.183.32-.477.247.011.016-.76-.19-.76-.19l-.52 1.202 1.368.341c.255.064.504.13.75.194l-.346 1.386 1.049.262.341-1.372c.286.078.564.149.837.217l-.34 1.366 1.05.262.345-1.384c2.126.402 3.725.24 4.396-1.683.543-1.548-.027-2.44-1.145-3.022.815-.188 1.428-.723 1.591-1.828zm-2.85 3.997c-.386 1.548-2.994.711-3.841.501l.685-2.746c.847.212 3.566.63 3.156 2.245zm.386-4.017c-.351 1.41-2.524.693-3.228.518l.622-2.492c.703.176 2.97.503 2.606 1.974z"/></svg>
+              <span class="coin-logo" style="background:#f7931a;">
+                <svg width="20" height="20" viewBox="0 0 32 32" fill="#fff"><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm3.912 13.472c.14-1.01-.618-1.555-1.672-1.918l.342-1.37-1.05-.262-.332 1.332c-.277-.07-.56-.135-.843-.2l.334-1.34-1.05-.262-.341 1.37c-.229-.052-.454-.104-.673-.158l.001-.005-1.45-.362-.28 1.122s.775.178.76.189c.423.106.5.385.486.607l-.486 1.948.118.03a.45.45 0 01-.12-.033l-.682 2.73c-.052.128-.183.32-.477.247.011.016-.76-.19-.76-.19l-.52 1.202 1.368.341c.255.064.504.13.75.194l-.346 1.386 1.049.262.341-1.372c.286.078.564.149.837.217l-.34 1.366 1.05.262.345-1.384c2.126.402 3.725.24 4.396-1.683.543-1.548-.027-2.44-1.145-3.022.815-.188 1.428-.723 1.591-1.828zm-2.85 3.997c-.386 1.548-2.994.711-3.841.501l.685-2.746c.847.212 3.566.63 3.156 2.245zm.386-4.017c-.351 1.41-2.524.693-3.228.518l.622-2.492c.703.176 2.97.503 2.606 1.974z"/></svg>
               </span>
-              <span class="crypto-coin-name">BTC</span>
-              <span class="crypto-coin-full">Bitcoin</span>
+              <span class="coin-info">
+                <span class="crypto-coin-name">Bitcoin</span>
+                <span class="crypto-coin-full">BTC</span>
+              </span>
+              <svg class="coin-check" width="16" height="16" fill="none" stroke="var(--gold)" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </button>
             <button class="crypto-coin-btn" data-address="0x08f36247a685c12df031ef66949157e76498b7fd" data-label="Ethereum (ETH)" data-symbol="ETH">
-              <span class="coin-logo" style="background:rgba(98,126,234,.18);color:#627eea;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.75l-6.25 10.5L12 15.5l6.25-3.25L12 1.75zM5.75 13.5L12 22.25l6.25-8.75L12 17l-6.25-3.5z"/></svg>
+              <span class="coin-logo" style="background:#627eea;">
+                <svg width="20" height="20" viewBox="0 0 32 32" fill="#fff"><path d="M16 3.5L7 16.5l9 5 9-5L16 3.5zM7 18.5l9 10 9-10-9 5-9-5z"/></svg>
               </span>
-              <span class="crypto-coin-name">ETH</span>
-              <span class="crypto-coin-full">Ethereum</span>
+              <span class="coin-info">
+                <span class="crypto-coin-name">Ethereum</span>
+                <span class="crypto-coin-full">ETH</span>
+              </span>
+              <svg class="coin-check" width="16" height="16" fill="none" stroke="var(--gold)" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </button>
             <button class="crypto-coin-btn" data-address="THXrWByREEno2cFdCqA14epHFPa8iiC1cm" data-label="USDT TRC-20" data-symbol="USDT">
-              <span class="coin-logo" style="background:rgba(38,161,123,.18);color:#26a17b;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/><text x="5" y="16" font-size="9" font-weight="bold" font-family="Arial">₮</text></svg>
+              <span class="coin-logo" style="background:#26a17b;">
+                <svg width="20" height="20" viewBox="0 0 32 32" fill="#fff"><path d="M18 13.5v-2h4V8H10v3.5h4v2C9.5 14 6 15.5 6 17.5S9.5 21 14 21.5V28h4v-6.5c4.5-.5 8-2 8-4s-3.5-3.5-8-4zm-2 6c-3.9 0-7-1.1-7-2.5S12.1 14.5 16 14.5s7 1.1 7 2.5-3.1 2.5-7 2.5z"/></svg>
               </span>
-              <span class="crypto-coin-name">USDT</span>
-              <span class="crypto-coin-full">TRC-20</span>
+              <span class="coin-info">
+                <span class="crypto-coin-name">Tether</span>
+                <span class="crypto-coin-full">USDT · TRC-20</span>
+              </span>
+              <svg class="coin-check" width="16" height="16" fill="none" stroke="var(--gold)" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </button>
             <button class="crypto-coin-btn" data-address="0x08f36247a685c12df031ef66949157e76498b7fd" data-label="USDT ERC-20" data-symbol="USDT">
-              <span class="coin-logo" style="background:rgba(38,161,123,.18);color:#26a17b;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/><text x="5" y="16" font-size="9" font-weight="bold" font-family="Arial">₮</text></svg>
+              <span class="coin-logo" style="background:#26a17b;">
+                <svg width="20" height="20" viewBox="0 0 32 32" fill="#fff"><path d="M18 13.5v-2h4V8H10v3.5h4v2C9.5 14 6 15.5 6 17.5S9.5 21 14 21.5V28h4v-6.5c4.5-.5 8-2 8-4s-3.5-3.5-8-4zm-2 6c-3.9 0-7-1.1-7-2.5S12.1 14.5 16 14.5s7 1.1 7 2.5-3.1 2.5-7 2.5z"/></svg>
               </span>
-              <span class="crypto-coin-name">USDT</span>
-              <span class="crypto-coin-full">ERC-20</span>
+              <span class="coin-info">
+                <span class="crypto-coin-name">Tether</span>
+                <span class="crypto-coin-full">USDT · ERC-20</span>
+              </span>
+              <svg class="coin-check" width="16" height="16" fill="none" stroke="var(--gold)" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </button>
             <button class="crypto-coin-btn" data-address="0x08f36247a685c12df031ef66949157e76498b7fd" data-label="BNB (BEP-20)" data-symbol="BNB">
-              <span class="coin-logo" style="background:rgba(243,186,47,.18);">
-                <svg width="22" height="22" viewBox="0 0 32 32" fill="#f3ba2f"><path d="M16 0l3.802 3.802-9.23 9.23-3.801-3.802L16 0zm-9.602 9.6l3.802 3.802-3.802 3.801L2.598 13.4 6.398 9.6zm9.602 0l9.23 9.23-9.23 9.232-9.23-9.231L16 9.6zm9.602 0l3.8 3.8-3.8 3.802-3.802-3.801 3.802-3.8zM6.398 22.4l3.802-3.801 5.8 5.799 5.8-5.8 3.802 3.802L16 32 6.398 22.4z"/></svg>
+              <span class="coin-logo" style="background:#f3ba2f;">
+                <svg width="20" height="20" viewBox="0 0 32 32" fill="#000"><path d="M16 3l3.8 3.8-9.23 9.23-3.8-3.8L16 3zm-9.6 9.6l3.8 3.8-3.8 3.8-3.8-3.8 3.8-3.8zm9.6 0l9.23 9.23-9.23 9.23-9.23-9.23L16 12.6zm9.6 0l3.8 3.8-3.8 3.8-3.8-3.8 3.8-3.8zM6.4 22.4l3.8-3.8 5.8 5.8 5.8-5.8 3.8 3.8L16 29 6.4 22.4z"/></svg>
               </span>
-              <span class="crypto-coin-name">BNB</span>
-              <span class="crypto-coin-full">BEP-20</span>
+              <span class="coin-info">
+                <span class="crypto-coin-name">BNB</span>
+                <span class="crypto-coin-full">BEP-20</span>
+              </span>
+              <svg class="coin-check" width="16" height="16" fill="none" stroke="var(--gold)" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </button>
           </div>
 
