@@ -257,8 +257,7 @@ nav.scrolled {
 
 .hero-bg {
   position: absolute; inset: 0;
-  background-image: url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/Yg29nKaXyGhLNJy1/table-mk39PBJy1PhpXBNe.jpg');
-  background-size: cover; background-position: center;
+  background: linear-gradient(135deg, #060a14 0%, #0d1526 50%, #060a14 100%);
   filter: brightness(0.12) saturate(0.4);
   transition: filter 0.4s;
 }
@@ -994,8 +993,7 @@ footer {
 }
 .page-hero-bg {
   position: absolute; inset: 0;
-  background-image: url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/Yg29nKaXyGhLNJy1/table-mk39PBJy1PhpXBNe.jpg');
-  background-size: cover; background-position: center;
+  background: linear-gradient(135deg, #060a14 0%, #0d1526 50%, #060a14 100%);
   filter: brightness(0.1) saturate(0.4);
 }
 [data-theme="light"] .page-hero-bg { filter: brightness(0.08) saturate(0.3); }
